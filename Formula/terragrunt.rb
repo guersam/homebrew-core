@@ -14,7 +14,9 @@ class Terragrunt < Formula
 
   depends_on "dep" => :build
   depends_on "go" => :build
-  depends_on "terraform"
+  
+  # Revert to "terraform" after https://github.com/gruntwork-io/terragrunt/issues/466 is resolved
+  depends_on "terraform@0.11"
 
   def install
     ENV["GOPATH"] = buildpath
